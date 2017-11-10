@@ -1,0 +1,16 @@
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\controller\ProductController.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\service\CustomerService.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\service\OrderService.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\controller\CustomerController.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\domain\repository\CustomerRepository.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\domain\repository\ProductRepository.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\service\ProductService.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\controller\OrderController.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\domain\repository\impl\InMemoryProductRepository.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\controller\HomeController.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\service\impl\ProductServiceImpl.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\service\impl\CustomerServiceImpl.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\domain\repository\impl\InMemoryCustomerRepository.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\domain\Customer.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\domain\Product.java
+C:\Users\barte\eclipse-workspace\webstore\src\main\java\service\impl\OrderServiceImpl.java

@@ -12,7 +12,7 @@ public class Product {
 	private long unitsInStock;
 	private long unitsInOrder;
 	private boolean discontinued;
-	private String contidion;
+	private String condition;
 
 
 	public Product() {
@@ -97,12 +97,12 @@ public class Product {
 		this.discontinued = discontinued;
 	}
 
-	public String getContidion() {
-		return contidion;
+	public String getCondition() {
+		return condition;
 	}
 
-	public void setContidion(String contidion) {
-		this.contidion = contidion;
+	public void setCondition(String condition) {
+		this.condition = condition;
 	}
 	
 	@Override

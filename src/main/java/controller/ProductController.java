@@ -1,11 +1,22 @@
 package controller;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.MatrixVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import domain.Product;
 import service.ProductService;
 
 @Controller
@@ -33,5 +44,39 @@ public class ProductController {
 	public String getProductsByCategory(Model model, @PathVariable("category") String productCategory) {
 		model.addAttribute("products", productService.getProductsByCategory(productCategory));
 		return "products";
+	}
+	
+	@RequestMapping("/filter/{ByCriteria}")
+	public String getProductsByFilter(@MatrixVariable(pathVar="ByCriteria") Map<String, List<String>> filterParams, Model model) {
+		model.addAttribute("products", productService.getProductsByFilter(filterParams));
+		return "products";
+	}
+	
+	@RequestMapping("/product")
+	public String getProductById(@RequestParam("id") String productId, Model model) {
+		model.addAttribute("product", productService.getProductById(productId));
+		return "product";
+	}
+	
+	@RequestMapping(value="/add", method=RequestMethod.GET)
+	public String getAddNewProductForm(Model model) {
+		Product newProduct = new Product();
+		model.addAttribute("newProduct", newProduct);
+		return "addProduct";
+	}
+	
+	@RequestMapping(value="/add", method = RequestMethod.POST)
+	public String processAddNewProductForm(@ModelAttribute("newProduct") Product newProduct, BindingResult result) {
+		String[] suppressedFields = result.getSuppressedFields();
+		if(suppressedFields.length > 0) {
+			throw new RuntimeException("Próba wi¹zania niedozwolonych pól: " + String.join(",", suppressedFields));
+		}
+		productService.addProduct(newProduct);
+		return "redirect:/products";
+	}
+	
+	@InitBinder
+	public void initialiseBinder(WebDataBinder binder) {
+		binder.setDisallowedFields("unitsInOrder", "discontinued");
 	}
 }

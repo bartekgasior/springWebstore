@@ -1,0 +1,16 @@
+controller\HomeController.class
+domain\repository\impl\InMemoryProductRepository.class
+service\impl\OrderServiceImpl.class
+service\impl\ProductServiceImpl.class
+controller\CustomerController.class
+domain\Customer.class
+controller\ProductController.class
+service\impl\CustomerServiceImpl.class
+domain\repository\ProductRepository.class
+domain\repository\CustomerRepository.class
+service\CustomerService.class
+service\OrderService.class
+service\ProductService.class
+controller\OrderController.class
+domain\repository\impl\InMemoryCustomerRepository.class
+domain\Product.class
